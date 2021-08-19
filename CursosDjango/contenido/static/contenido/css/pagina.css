@@ -1,0 +1,16 @@
+
+.inicio h1{
+text-align: center;
+margin: auto;
+margin-bottom: 30px;
+margin-top: auto;
+border-radius: 4px;
+}
+
+.inicio{
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    margin-top: auto;
+    border-radius: 4px;
+    }

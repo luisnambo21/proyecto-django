@@ -1,0 +1,24 @@
+
+{% extends "contenido/encabezado.html" %}
+
+{% block titulo %}FORMULARIO{% endblock %} 
+
+{%block contenido%}
+<div  class="form">
+    <h2>Solicitar Información</h2>
+        <p>Nombre:<input type="text" name="nombre"></p>
+        <p>Correo:<input type="text" name="correo"></p>
+        <p>Cursos:
+            <select name="curso">
+                <option>Base de datos</option>
+                <option>Programación</option>
+                <option>Matematicas</option>
+                <option>Ingles</option>
+                <option>Diseño</option>
+                <option>Quimica</option>
+            </select>
+        </p>
+        </p><textarea name="mensaje" cols="50" rows="10" placeholder="Comentario"></textarea></p>
+        <p><input class="btn1" type="Button" name="enviar" value="Enviar"></p>
+</div>
+{%endblock%}

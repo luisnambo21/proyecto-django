@@ -1,0 +1,45 @@
+
+{% extends "contenido/encabezado.html" %}
+
+{% block titulo %}PAGINA INICIAL{% endblock %} 
+
+
+{% block contenido %}
+    <div class="inicio">
+        <h1>BIENVENIDO</h1>
+    
+        <p>Aqui encontraras algunos cursos disponibles, 
+            contaras con un formulario para cualquier tipo de informacion que necesites sobre el curso de tu agrado, 
+            podras saltar de pagina a pagina gracias al menu que se encuentra en la parte superior</p>
+
+            <!-- Tabla de Comentarios -->
+            <table class="table table-bordered tablestriped">
+            <thead>
+            <tr>
+            <th>Usuario</th>
+            <th>Correo</th>
+            <th>Curso</th>
+            <th>Mensaje</th>
+            <th></th>
+            </tr>
+            </thead>
+
+            <tbody>
+                {% for comentario in comentarios %}
+                <tr>
+                <td class="text-semibold">{{comentario.nombre}}</td>
+                <td class="muted">{{comentario.correo}}</td>
+                <td class="muted">{{comentario.curso}}</td>
+                <td class="muted">{{comentario.mensaje}}</td>   
+                <td class="text-center"><a href=" {%url 'Consultar' comentario.id%} ">Editar</a> 
+                </td>
+                <td class="text-center">
+                    <a href=" {%url 'Eliminar' comentario.id%} ">Eliminar</a>
+                </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+                </table>
+                <!-- /Tabla de alumnos -->
+    </div>
+{% endblock %}

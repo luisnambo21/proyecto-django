@@ -1,0 +1,18 @@
+
+{% extends "contenido/encabezado.html" %}
+
+{% block titulo %}FORMULARIO{% endblock %} 
+
+{%block contenido%}
+<div  class="form">
+    <form action="{% url 'RegistrarCurso' %}" method="POST" role="form">
+    {%csrf_token%}
+    <h2>Solicitar Información</h2>
+        <p>Curso:<input type="text" name="mat"></p>
+        <p>Turno:<input type="text" name="tur"></p>
+        <p>Matricula:<input type="text" name="matricula"></p>
+        <p>Calificacion:<input type="text" name="calif"></p>
+        <p><input class="btn btn-primary" type="submit" name="enviar" value="Enviar"></p>
+    </form>
+</div>
+{%endblock%}

@@ -1,0 +1,30 @@
+
+{% extends "contenido/encabezado.html" %}
+
+{% block titulo%} CARGA DE ARCHIVOS {%endblock%}
+
+{% block encabezado%}
+
+    <!--Encabezdo -->
+        <div class="page-header">
+            <div class="page-title">
+            <h3>Envia tu documento
+            <small>...</small></h3>
+            </div>
+        </div>
+    <!-- /Encabezado -->
+
+{%endblock%}  
+
+
+{%block contenido%}
+<div  class="form">
+    <form action="{% url 'Subir' %}" method="POST" role="form" enctype="multipart/form-data">
+    {%csrf_token%}
+    <h2>Solicitar Información</h2>
+        <p>Titulo:<input type="text" name="titulo"></p>
+        <p>Archivo:<input type="file" name="archivo"></p>
+        <p><input class="btn btn-primary" type="submit" name="enviar" value="Enviar"></p>
+    </form>
+</div>
+{%endblock%}
